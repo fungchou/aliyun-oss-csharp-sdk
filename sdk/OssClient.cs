@@ -1167,7 +1167,7 @@ namespace Aliyun.OSS
             IDictionary<string, string> queryParams = new Dictionary<string, string>();
             queryParams.Add(RequestParameters.EXPIRES, expires);
             queryParams.Add(RequestParameters.OSS_ACCESS_KEY_ID, accessKeyId);
-            queryParams.Add(RequestParameters.SIGNATURE, signature);
+            queryParams.Add(RequestParameters.SIGNATURE, Uri.EscapeDataString(signature));
             foreach (var param in request.Parameters)
                 queryParams.Add(param.Key, param.Value);
 
